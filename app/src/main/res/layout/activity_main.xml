@@ -14,6 +14,10 @@
     <include
         android:id="@+id/c2"
         layout="@layout/text_list_item"/>
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
     <com.example.chou.mycommonapp.view.PercentCircleView
     android:id="@+id/percent_circle"
     android:visibility="gone"
