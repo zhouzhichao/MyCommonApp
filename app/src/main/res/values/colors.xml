@@ -5,4 +5,8 @@
     <color name="colorAccent">#FF4081</color>
     <color name="background">#9bd435</color>
     <color name="white">#ffffff</color>
+    <!--页面背景的颜色-->
+    <color name="colorPageBg">#f2f4f5</color>
+    <color name="colorTheme">#ffce3d3a</color>
+    <color name="colorWhite">#ffffffff</color>
 </resources>

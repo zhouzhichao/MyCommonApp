@@ -17,6 +17,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    dataBinding {
+        enabled = true
+    }
 }
 
 dependencies {
@@ -24,11 +27,29 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:24.2.0'
+    compile 'com.android.support:appcompat-v7:24+'
     testCompile 'junit:junit:4.12'
     compile 'io.reactivex:rxandroid:1.2.1'
     // Because RxAndroid releases are few and far between, it is recommended you also
+
     // explicitly depend on RxJava's latest version for bug fixes and new features.
     compile 'io.reactivex:rxjava:x.y.z'
     compile files('libs/bcprov-ext-jdk15on-154.jar')
+    compile files('libs/MobCommons-2016.1222.1756.jar')
+    compile files('libs/MobTools-2016.1222.1756.jar')
+    compile files('libs/ShareSDK-Core-2.8.0.jar')
+    compile files('libs/ShareSDK-Email-2.8.0.jar')
+    compile files('libs/ShareSDK-Facebook-2.8.0.jar')
+    compile files('libs/ShareSDK-QQ-2.8.0.jar')
+    compile files('libs/ShareSDK-QZone-2.8.0.jar')
+    compile files('libs/ShareSDK-ShortMessage-2.8.0.jar')
+    compile files('libs/ShareSDK-SinaWeibo-2.8.0.jar')
+    compile files('libs/ShareSDK-TencentWeibo-2.8.0.jar')
+    compile files('libs/ShareSDK-Twitter-2.8.0.jar')
+    compile files('libs/ShareSDK-Wechat-2.8.0.jar')
+    compile files('libs/ShareSDK-Wechat-Core-2.8.0.jar')
+    compile files('libs/ShareSDK-Wechat-Favorite-2.8.0.jar')
+    compile files('libs/ShareSDK-Wechat-Moments-2.8.0.jar')
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.android.support:design:24+'
 }

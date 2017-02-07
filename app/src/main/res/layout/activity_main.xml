@@ -1,32 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.chou.mycommonapp.MainActivity">
-    <include
-        layout="@layout/title_bar"/>
-    <include
-        android:id="@+id/c1"
-        layout="@layout/text_list_item"/>
-    <include
-        android:id="@+id/c2"
-        layout="@layout/text_list_item"/>
-    <TextView
-        android:id="@+id/tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <com.example.chou.mycommonapp.view.PercentCircleView
-    android:id="@+id/percent_circle"
-    android:visibility="gone"
-    android:layout_centerHorizontal="true"
-    android:layout_gravity="center"
-    android:background="#ffffff"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
-</com.example.chou.mycommonapp.view.PercentCircleView>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-</LinearLayout>
+    <android.support.v4.widget.DrawerLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:context=".MainActivity">
+
+        <include
+            android:id="@+id/include"
+            layout="@layout/app_bar_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <android.support.design.widget.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@color/colorPageBg"
+            android:clickable="true"
+            android:fitsSystemWindows="true" />
+
+        <!--app:headerLayout="@layout/nav_header_main"-->
+        <!--app:menu="@menu/activity_main_drawer"-->
+    </android.support.v4.widget.DrawerLayout>
+</layout>
