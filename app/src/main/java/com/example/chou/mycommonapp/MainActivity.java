@@ -14,10 +14,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.chou.mycommonapp.databinding.ActivityMainBinding;
+import com.example.chou.mycommonapp.http.RxBus;
+import com.example.chou.mycommonapp.http.RxBusBaseMessage;
+import com.example.chou.mycommonapp.http.RxCodeConstants;
 import com.example.chou.mycommonapp.view.PercentCircleView;
 
 import cn.sharesdk.onekeyshare.OnekeyShare;
 import cn.sharesdk.sina.weibo.SinaWeibo;
+import rx.functions.Action1;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -42,7 +46,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         mainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         initId();
+        initRxBus();
     }
+
+    private void initRxBus() {
+        RxBus.getDefault().toObservable(RxCodeConstants.JUMP_TYPE_TO_ONE, RxBusBaseMessage.class).subscribe(new Action1<RxBusBaseMessage>() {
+            @Override
+            public void call(RxBusBaseMessage rxBusBaseMessage) {
+                vpContent.setCurrentItem(1);
+            }
+        });
+    }
+
     private void initId() {
         drawerLayout = mainBinding.drawerLayout;
         navView = mainBinding.navView;
