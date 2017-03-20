@@ -48,16 +48,6 @@ public class MainActivity extends AppCompatActivity {
         initId();
         initRxBus();
     }
-
-    private void initRxBus() {
-        RxBus.getDefault().toObservable(RxCodeConstants.JUMP_TYPE_TO_ONE, RxBusBaseMessage.class).subscribe(new Action1<RxBusBaseMessage>() {
-            @Override
-            public void call(RxBusBaseMessage rxBusBaseMessage) {
-                vpContent.setCurrentItem(1);
-            }
-        });
-    }
-
     private void initId() {
         drawerLayout = mainBinding.drawerLayout;
         navView = mainBinding.navView;
@@ -71,6 +61,17 @@ public class MainActivity extends AppCompatActivity {
         ivTitleOne = mainBinding.include.ivTitleOne;
         ivTitleDou = mainBinding.include.ivTitleDou;
     }
+
+    private void initRxBus() {
+        RxBus.getDefault().toObservable(RxCodeConstants.JUMP_TYPE_TO_ONE, RxBusBaseMessage.class).subscribe(new Action1<RxBusBaseMessage>() {
+            @Override
+            public void call(RxBusBaseMessage rxBusBaseMessage) {
+                vpContent.setCurrentItem(1);
+            }
+        });
+    }
+
+
 
     /*private void firstMethod() {
         setContentView(R.layout.activity_main);
